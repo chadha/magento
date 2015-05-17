@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Webinse
+ * @package     Webinse_Faq
+ * @author      Alena Tsareva <alena.tsareva@webinse.com>
+ */
+-->
+
+<config>
+    <!-- module configuration as active, depends, version -->
+    <modules>
+        <Webinse_Faq>
+            <version>2.1.0</version>
+        </Webinse_Faq>
+    </modules>
+
+    <!--
+        including configure operation of module on frontend such as cards:
+    secure_url, events,routers, translate, layout. The configurations only have
+    impact on frontend.
+    -->
+    <frontend>
+        <routers>
+            <faq>
+                <use>standard</use>
+                <args>
+                    <module>Webinse_Faq</module>
+                    <frontName>module</frontName>
+                </args>
+            </faq>
+        </routers>
+
+
+        <layout>
+            <updates>
+                <faq>
+
+                     <file>webinse/faq.xml</file>
+
+                </faq>
+            </updates>
+        </layout>
+
+
+        <translate>
+            <modules>
+                <Webinse_Faq>
+                    <files>
+                        <default>Webinse_Faq.csv</default>
+                    </files>
+                </Webinse_Faq>
+            </modules>
+        </translate>
+        <!-- You can find an explanation in this article http://www.magentocommerce.com/knowledge-base/entry/magento-for-dev-part-3-magento-controller-dispatch -->
+    </frontend>
+
+
+    <global>
+
+        <models>
+            <WebinseFaq>
+                <class>Webinse_Faq_Model</class>
+                <resourceModel>WebinseFaq_resource</resourceModel>
+            </WebinseFaq>
+
+            <WebinseFaq_resource>
+                <class>Webinse_Faq_Model_Resource</class>
+                <entities>
+                    <table_faq>
+                        <table>webinse_faq_entities_new</table>
+                    </table_faq>
+                </entities>
+            </WebinseFaq_resource>
+
+        </models>
+
+        <resources>
+            <WebinseFaq_setup>
+                <setup>
+                    <module>Webinse_Faq</module>
+                </setup>
+            </WebinseFaq_setup>
+        </resources>
+
+        <blocks>
+            <WebinseFaq>
+                <class>Webinse_Faq_Block</class>
+            </WebinseFaq>
+        </blocks>
+
+        <!--<helpers>-->
+            <!--<faq>-->
+                <!--<class>Webinse_Faq_Helper</class>-->
+            <!--</faq>-->
+        <!--</helpers>-->
+
+    </global>
+
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <faq>
+                    <file>faq.xml</file>
+                </faq>
+            </updates>
+        </layout>
+    </adminhtml>
+
+
+    <admin>
+        <routers>
+            <adminhtml><!--дополнительная конфигурация в файле adminhtml -->
+                <args>
+                    <modules>
+                        <Webinse_Faq before="Mage_Adminhtml">Webinse_Faq_Adminhtml</Webinse_Faq>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+
+    <!--<admin>-->
+        <!--<routers>-->
+            <!--<faq_admin>-->
+                <!--<use>admin</use>-->
+                <!--<args>-->
+                    <!--<module>Webinse_Faq</module>-->
+                    <!--<frontName>Faq_admin</frontName>-->
+                <!--</args>-->
+            <!--</faq_admin>-->
+        <!--</routers>-->
+    <!--</admin>-->
+
+
+
+</config>

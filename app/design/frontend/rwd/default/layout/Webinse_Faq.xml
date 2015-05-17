@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Webinse
+ * @package     Webinse_Faq
+ * @author      Alena Tsareva <alena.tsareva@webinse.com>
+ */
+-->
+
+<layout>
+    <faq_index_getallfaq>
+        <reference name="head">
+            <!--
+                @todo Set page title
+            -->
+        </reference>
+
+        <reference name="content">
+            <!--
+                @todo Remove left and right columns
+            -->
+
+            <block type="set_your_block" name="all.faq" as="all.faq" template="webinse/faq/view.phtml" />
+        </reference>
+    </faq_index_getallfaq>
+
+    <faq_index_addnewfaq>
+        <!--
+            @todo Set page title
+                  set template page/2columns-right.phtml
+                  add block that using template webinse/faq/form.phtml
+                  also you can add your own styles or scripts
+        -->
+    </faq_index_addnewfaq>
+
+    <faq_index_editfaq>
+        <!--
+            @todo Set page title
+                  set template page/2columns-left.phtml
+                  add block that using template webinse/faq/form.phtml
+                  also you can add your own styles or scripts
+        -->
+    </faq_index_editfaq>
+</layout>

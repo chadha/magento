@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<config>
+    <modules>
+        <Magentotutorial_Helloworld>
+            <version>0.1.0</version>
+        </Magentotutorial_Helloworld>
+    </modules>
+</config>

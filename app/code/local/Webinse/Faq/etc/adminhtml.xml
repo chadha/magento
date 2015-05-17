@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <faq module="faq"><!--module имя хелпера сам ковычки имя лайаута-->
+            <title>FAQ</title><!--название пункта меню-->
+            <sort_order>99</sort_order><!--кол-во категорий на страницу-->
+            <action>adminhtml/faq</action><!-- 1 - е папка.. 2-е имя контроллера -->
+        </faq>
+    </menu>
+</config>

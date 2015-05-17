@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Webinse
+ * @package     Webinse_Faq
+ * @author      Alena Tsareva <alena.tsareva@webinse.com>
+ */
+-->
+
+<layout>
+
+
+
+
+
+    <faq_index_getallfaq>
+        <reference name="head">
+            <title>My first module</title>
+            <action method="addCSS"><stylesheet>css/bootstrap.css</stylesheet></action>
+        </reference>
+
+        <reference name="content">
+            <remove name="right"></remove>
+            <remove name="left"></remove>
+            <block type="WebinseFaq/Faq" name="all.faq" as="all.faq" template="webinse/faq/view.phtml" />
+        </reference>
+
+    </faq_index_getallfaq>
+
+
+    <faq_index_addnewfaq>
+        <reference name="head">
+            <title >My first new record</title>
+            <action method="addCSS"><stylesheet>css/bootstrap.css</stylesheet></action>
+        </reference>
+
+        <reference name="content">
+            <block type="WebinseFaq/Faq" name="new.faq" as="new.faq" template="webinse/faq/form.phtml" />
+        </reference>
+
+    </faq_index_addnewfaq>
+
+    <faq_index_editfaqbyid>
+        <reference name="head">
+            <title >My first new record</title>
+            <action method="addCSS"><stylesheet>css/bootstrap.css</stylesheet></action>
+        </reference>
+
+        <reference name="content">
+            <block type="WebinseFaq/Faq" name="new.faq" as="new.faq" template="webinse/faq/form.phtml" />
+        </reference>
+
+    </faq_index_editfaqbyid>
+</layout>

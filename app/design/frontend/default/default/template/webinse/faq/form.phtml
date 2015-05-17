@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var Webinse_Faq_Block_Faq
+ */
+?>
+
+<?php $helper = Mage::helper('faq'); ?>
+<?php $item   = $this->getFaqById() ?>
+
+
+<div class="container-fluid" style="width: 80%; margin: 0; padding: 0">
+    <div class="row" style="margin: 0">
+        <h2 class="legend"><?php if ($item->getId()): ?><?php echo $helper->__('Edit') ?><?php else: ?><?php echo $helper->__('Add') ?><?php endif; ?></h2>
+
+        <?($item->getId())? $up='?id='.$item->getId() : $up="" ; ?>
+        <form action="<?php echo Mage::getUrl('faq/index/form'.$up) ?>" method="post" id="form-validate" >
+            <label class="text-primary text-nowrap">Question</label>
+            <input type="text" name="Question" value="<?echo $item->getQuestion()?>" title="<?php echo $helper->__('question') ?>" class="form-control required-entry" />
+            <br>
+            <label class="text-primary text-nowrap">Answer</label>
+            <input type="text" name="Answer" value="<?echo $item->getAnswer()?>" title="<?php echo $helper->__('answer') ?>" class="form-control required-entry" />
+            <br>
+            <div style="width: 100%" class="text-center">
+                <button type="submit" class="btn btn-primary"><?php if ($item->getId()): ?><?php echo $helper->__('Edit') ?><?php else: ?><?php echo $helper->__('Add') ?><?php endif; ?></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+    
+//]]>
+</script>
+
+
